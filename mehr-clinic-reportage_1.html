@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>پیشنهاد انتشار رپورتاژ آگهی | کلینیک مهر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f2a33;--muted:#5b7680;--line:#e3eef0;--bg:#f4f9f9;--card:#fff;
+  --teal:#0e9f8f;--teal-d:#077a6e;--teal-l:#e2f6f3;--mint:#9be7d8;
+  --coral:#ff7a59;--coral-l:#fff0eb;--gold:#f2b84b;
+  --c1:#0e9f8f;--c2:#3b6fd8;--c3:#d9822b;--c4:#9b5de5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Vazirmatn,Tahoma,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.num{font-feature-settings:"tnum";}
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#063f45 0%,#0a6b66 45%,#0e9f8f 100%);color:#fff;padding:56px 24px 120px}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(2px)}
+.hero::before{width:420px;height:420px;background:radial-gradient(circle,rgba(155,231,216,.35),transparent 70%);top:-160px;left:-120px}
+.hero::after{width:300px;height:300px;background:radial-gradient(circle,rgba(255,122,89,.25),transparent 70%);bottom:-120px;right:10%}
+.wrap{max-width:1180px;margin:0 auto;position:relative;z-index:1}
+.tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:6px 14px;border-radius:99px;font-size:13px;backdrop-filter:blur(6px)}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px rgba(155,231,216,.25)}
+.hero h1{font-size:clamp(28px,4.4vw,46px);font-weight:900;margin:18px 0 8px;letter-spacing:-.5px}
+.hero h1 span{color:var(--mint)}
+.hero p{opacity:.85;max-width:640px;font-size:15.5px}
+.hero .meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;font-size:13px;opacity:.85}
+.hero .meta b{font-weight:700}
+.cross{position:absolute;left:4%;top:44px;width:120px;height:120px;opacity:.13}
+/* KPI */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:-78px;position:relative;z-index:2}
+.kpi{background:var(--card);border-radius:20px;padding:20px 22px;box-shadow:0 10px 30px -12px rgba(6,63,69,.25);border:1px solid var(--line)}
+.kpi .l{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.kpi .l svg{width:18px;height:18px}
+.kpi .v{font-size:26px;font-weight:800;margin-top:6px}
+.kpi .v small{font-size:13px;font-weight:500;color:var(--muted);margin-right:4px}
+.kpi.hl{background:linear-gradient(135deg,var(--teal),var(--teal-d));color:#fff;border:0}
+.kpi.hl .l,.kpi.hl .v small{color:rgba(255,255,255,.8)}
+.kpi .sub{font-size:12px;margin-top:2px;color:var(--muted)}
+.kpi.save .v{color:var(--coral)}
+.pill{display:inline-block;background:var(--coral-l);color:var(--coral);font-weight:700;font-size:12px;padding:2px 10px;border-radius:99px}
+/* SECTIONS */
+section{margin-top:28px}
+.panel{background:var(--card);border-radius:22px;border:1px solid var(--line);padding:24px}
+.h2{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.h2 h2{font-size:19px;font-weight:800}
+.h2 p{font-size:13px;color:var(--muted)}
+/* MIX */
+.mix{display:grid;grid-template-columns:1.1fr 1fr;gap:20px}
+.bar{display:flex;height:16px;border-radius:99px;overflow:hidden;background:var(--line);margin:8px 0 18px}
+.bar div{height:100%;transition:width .4s}
+.legend{display:grid;gap:10px}
+.lg{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:14px;background:var(--bg);cursor:pointer;border:1.5px solid transparent;transition:.2s}
+.lg:hover{border-color:var(--line)}
+.lg.on{border-color:var(--teal);background:var(--teal-l)}
+.lg .dot{width:12px;height:12px;border-radius:4px;flex:none}
+.lg .nm{flex:1;font-weight:600;font-size:14px}
+.lg .ct{font-size:12px;color:var(--muted)}
+.lg .am{font-weight:700;font-size:14px;min-width:120px;text-align:left}
+.why{display:grid;gap:12px}
+.why div{display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:14px;background:linear-gradient(180deg,#fafdfd,#f1f8f8);border:1px solid var(--line)}
+.why .ic{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;flex:none;color:#fff;font-weight:800}
+.why h4{font-size:14px;font-weight:700}
+.why p{font-size:12.5px;color:var(--muted)}
+/* TOOLBAR */
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.search{flex:1;min-width:200px;position:relative}
+.search input{width:100%;padding:11px 40px 11px 14px;border-radius:12px;border:1.5px solid var(--line);font:inherit;font-size:14px;background:var(--bg);outline:none;transition:.2s}
+.search input:focus{border-color:var(--teal);background:#fff}
+.search svg{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:18px;color:var(--muted)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:99px;padding:7px 14px;font:inherit;font-size:13px;cursor:pointer;color:var(--ink);transition:.2s}
+.chip:hover{border-color:var(--mint)}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn{border:0;background:var(--teal-l);color:var(--teal-d);font:inherit;font-weight:700;font-size:13px;padding:9px 14px;border-radius:12px;cursor:pointer}
+.btn:hover{background:var(--mint)}
+/* TABLE */
+.tw{overflow-x:auto;border-radius:16px;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:820px}
+thead th{background:#f7fbfb;color:var(--muted);font-weight:600;font-size:12.5px;text-align:right;padding:13px 14px;border-bottom:1px solid var(--line);white-space:nowrap;cursor:pointer;user-select:none;position:sticky;top:0}
+thead th.nosort{cursor:default}
+thead th .ar{opacity:.35;margin-right:4px;font-size:10px}
+thead th.s .ar{opacity:1;color:var(--teal)}
+tbody td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:middle}
+tbody tr{transition:background .15s}
+tbody tr:hover{background:#f8fcfc}
+tbody tr.off{opacity:.42}
+tbody tr.off .final{text-decoration:line-through}
+.media{display:flex;align-items:center;gap:12px}
+.av{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-weight:800;color:#fff;font-size:15px;flex:none}
+.media b{font-weight:700;display:block}
+.media small{font-size:11.5px;color:var(--muted)}
+.typ{font-size:12px;padding:3px 10px;border-radius:99px;white-space:nowrap;font-weight:600}
+.cat{font-size:12px;color:var(--muted);white-space:nowrap}
+.old{color:var(--muted);text-decoration:line-through;font-size:13px}
+.final{font-weight:800}
+.disc{font-weight:700;font-size:12px;padding:3px 9px;border-radius:8px;background:var(--coral-l);color:var(--coral);white-space:nowrap}
+.disc.z{background:#f1f4f5;color:#9aaab0}
+.cb{appearance:none;width:20px;height:20px;border-radius:6px;border:2px solid #c6d9dc;cursor:pointer;display:grid;place-items:center;transition:.15s;background:#fff}
+.cb:checked{background:var(--teal);border-color:var(--teal)}
+.cb:checked::after{content:"";width:5px;height:10px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
+tfoot td{padding:14px;background:#f7fbfb;font-weight:800}
+.empty{text-align:center;padding:40px;color:var(--muted)}
+/* STICKY SUMMARY */
+.sum{position:sticky;bottom:16px;z-index:5;margin-top:22px}
+.sum .in{background:rgba(15,42,51,.94);backdrop-filter:blur(10px);color:#fff;border-radius:20px;padding:14px 22px;display:flex;align-items:center;gap:26px;flex-wrap:wrap;box-shadow:0 18px 40px -16px rgba(6,63,69,.6)}
+.sum .it{font-size:12px;opacity:.75}
+.sum .it b{display:block;font-size:17px;opacity:1;color:#fff;font-weight:800}
+.sum .it.big b{color:var(--mint);font-size:22px}
+.sum .sp{flex:1}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:40px 16px 30px}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.mix{grid-template-columns:1fr}}
+@media(max-width:520px){.kpis{grid-template-columns:1fr}.hero{padding:40px 18px 110px}.panel{padding:16px}.lg .am{min-width:0}}
+
+.msort{display:none;font:inherit;font-size:13px;padding:9px 12px;border-radius:12px;border:1.5px solid var(--line);background:#fff;color:var(--ink)}
+@media(max-width:640px){
+  body{font-size:14px}
+  .hero{padding:32px 16px 96px}
+  .hero h1{font-size:28px}
+  .hero p{font-size:14px}
+  .hero .meta{flex-direction:column;gap:4px;margin-top:14px}
+  .cross{width:70px;height:70px;top:20px}
+  main.wrap{padding:0 12px!important}
+  .kpis{grid-template-columns:1fr 1fr;gap:10px;margin-top:-70px}
+  .kpi{padding:14px;border-radius:16px}
+  .kpi .v{font-size:18px}
+  .kpi .v small{display:block;margin:0;font-size:11px}
+  .kpi .sub{font-size:11px}
+  section{margin-top:18px}
+  .panel{padding:16px 14px;border-radius:18px}
+  .h2 h2{font-size:17px}
+  .lg{padding:10px 12px;flex-wrap:wrap;gap:4px 10px}
+  .lg .nm{font-size:13.5px}
+  .lg .am{min-width:0;font-size:13px}
+  .lg .ct{order:4;width:100%;padding-right:22px}
+  .toolbar{gap:8px}
+  .search{min-width:100%}
+  .chips{flex-wrap:nowrap;overflow-x:auto;width:100%;padding-bottom:4px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{white-space:nowrap;flex:none}
+  .msort{display:block;flex:1 1 100%}
+  .btn{padding:9px 12px;flex:1}
+  .tw{border:0;overflow:visible}
+  table{min-width:0;font-size:13px}
+  thead{display:none}
+  tbody{display:grid;gap:10px}
+  tbody tr{display:grid;grid-template-columns:24px auto auto 1fr auto;column-gap:8px;row-gap:8px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:16px;background:#fff}
+  tbody td{padding:0;border:0;min-width:0}
+  .c-cb{grid-column:1;grid-row:1/3;align-self:start;padding-top:7px}
+  .c-name{grid-column:2/5;grid-row:1}
+  .c-final{grid-column:5;grid-row:1;font-size:15px;text-align:left;white-space:nowrap}
+  .c-type{grid-column:2;grid-row:2}
+  .c-disc{grid-column:3;grid-row:2}
+  .c-cat{grid-column:2/6;grid-row:3;font-size:11.5px}
+  .c-cat::before{content:"محل انتشار: "}
+  .same,.disc.z{display:none}
+  .c-old{grid-column:5;grid-row:2;text-align:left;font-size:12px;color:var(--muted)}
+  .typ{font-size:11px;padding:2px 8px}
+  .disc{font-size:11px;padding:2px 7px}
+  .av{width:34px;height:34px;font-size:14px;border-radius:10px}
+  .media b{font-size:14px}
+  .empty{display:block}
+  .sum{bottom:10px;margin-top:16px}
+  .sum .in{padding:10px 16px;gap:12px;border-radius:16px;flex-wrap:nowrap}
+  .sum .it.mid{display:none}
+  .sum .it{font-size:11px}
+  .sum .it b{font-size:14px}
+  .sum .it.big b{font-size:18px}
+  footer{padding-bottom:24px}
+}
+@media print{.toolbar,.sum,.hero::before,.hero::after{display:none}body{background:#fff}.panel,.kpi{box-shadow:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="cross" viewBox="0 0 100 100" fill="#fff"><path d="M38 0h24v38h38v24H62v38H38V62H0V38h38z"/></svg>
+  <div class="wrap">
+    <span class="tag"><i></i>پیشنهاد انتشار رپورتاژ آگهی</span>
+    <h1>برنامه رسانه‌ای <span>کلینیک مهر</span></h1>
+    <p>فهرست رسانه‌های پیشنهادی برای انتشار رپورتاژ آگهی، از رسانه‌های تخصصی سلامت تا خبرگزاری‌های پرمخاطب؛ با قیمت پایه، تخفیف و قیمت نهایی هر رسانه.</p>
+    <div class="meta">
+      <div>کارفرما: <b>کلینیک مهر</b> — mehrhub.com</div>
+      <div>ارائه‌دهنده: <b>یکتانت</b></div>
+      <div>تاریخ: <b id="today"></b></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" style="padding:0 16px">
+  <div class="kpis">
+    <div class="kpi">
+      <div class="l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>تعداد رسانه</div>
+      <div class="v num" id="k-n"></div>
+      <div class="sub" id="k-n2"></div>
+    </div>
+    <div class="kpi">
+      <div class="l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9.5h4.5a2 2 0 010 4H10a2 2 0 000 4h5"/></svg>مجموع قیمت پایه</div>
+      <div class="v num"><span id="k-p"></span><small>تومان</small></div>
+      <div class="sub">پیش از اعمال تخفیف</div>
+    </div>
+    <div class="kpi save">
+      <div class="l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12l-8 8-8-8V4h8z"/><circle cx="8" cy="8" r="1.5"/></svg>مجموع تخفیف</div>
+      <div class="v num"><span id="k-s"></span><small>تومان</small></div>
+      <div class="sub"><span class="pill num" id="k-sp"></span> صرفه‌جویی</div>
+    </div>
+    <div class="kpi hl">
+      <div class="l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>قیمت نهایی</div>
+      <div class="v num"><span id="k-f"></span><small>تومان</small></div>
+      <div class="sub" style="color:rgba(255,255,255,.8)">برای کل سبد پیشنهادی</div>
+    </div>
+  </div>
+
+  <section class="panel">
+    <div class="h2"><div><h2>ترکیب رسانه‌ای</h2><p>سهم هر گروه رسانه از بودجه نهایی — روی هر گروه بزنید تا جدول فیلتر شود</p></div></div>
+    <div class="mix">
+      <div>
+        <div class="bar" id="bar"></div>
+        <div class="legend" id="legend"></div>
+      </div>
+      <div class="why" id="why"></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="h2"><div><h2>فهرست رسانه‌ها</h2><p>برای ساخت سبد دلخواه، تیک رسانه‌ها را بردارید یا بگذارید؛ جمع پایین صفحه به‌روز می‌شود</p></div></div>
+    <div class="toolbar">
+      <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" placeholder="جستجوی نام رسانه..."></div>
+      <div class="chips" id="cats"></div>
+      <select id="msort" class="msort">
+        <option value="d:-1">مرتب‌سازی: گران‌ترین</option>
+        <option value="d:1">ارزان‌ترین</option>
+        <option value="r:-1">بیشترین تخفیف</option>
+        <option value="n:1">نام رسانه</option>
+        <option value="t:1">گروه رسانه</option>
+      </select>
+      <button class="btn" id="all">انتخاب همه</button>
+      <button class="btn" id="none">حذف همه</button>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr>
+          <th class="nosort" style="width:44px"></th>
+          <th data-k="n">رسانه<span class="ar">▼</span></th>
+          <th data-k="t">گروه<span class="ar">▼</span></th>
+          <th data-k="c">محل انتشار<span class="ar">▼</span></th>
+          <th data-k="p">قیمت پایه<span class="ar">▼</span></th>
+          <th data-k="r">تخفیف<span class="ar">▼</span></th>
+          <th data-k="d">قیمت نهایی (تومان)<span class="ar">▼</span></th>
+        </tr></thead>
+        <tbody id="tb"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="sum"><div class="in">
+    <div class="it">رسانه‌های انتخاب‌شده<b class="num" id="s-n"></b></div>
+    <div class="it mid">قیمت پایه<b class="num" id="s-p"></b></div>
+    <div class="it mid">تخفیف<b class="num" id="s-s"></b></div>
+    <div class="sp"></div>
+    <div class="it big">مبلغ قابل پرداخت (تومان)<b class="num" id="s-f"></b></div>
+  </div></div>
+</main>
+
+<footer>قیمت‌ها به تومان و برای یک‌بار انتشار در هر رسانه است · تهیه‌شده توسط یکتانت</footer>
+
+<script>
+const DATA=[{"n": "مثبت سبز", "c": "دسته‌بندی مرتبط", "p": 10000000, "d": 9900000, "t": "سلامت و پزشکی"}, {"n": "دکتر سلام", "c": "دسته‌بندی رپورتاژ آگهی", "p": 15100000, "d": 9210000, "t": "سلامت و پزشکی"}, {"n": "سلامت نیوز", "c": "دسته‌بندی مرتبط", "p": 5000000, "d": 5000000, "t": "سلامت و پزشکی"}, {"n": "یک پزشک", "c": "دسته‌بندی مرتبط", "p": 7250000, "d": 7250000, "t": "سلامت و پزشکی"}, {"n": "ایران مدیکال اینفو", "c": "دسته‌بندی مرتبط", "p": 9600000, "d": 7200000, "t": "سلامت و پزشکی"}, {"n": "ایران مدیکال اینفو", "c": "سایر", "p": 18000000, "d": 12600000, "t": "سلامت و پزشکی"}, {"n": "پزشک سایت", "c": "سایر", "p": 4000000, "d": 2850000, "t": "سلامت و پزشکی"}, {"n": "مجله سلامت", "c": "دسته‌بندی مرتبط", "p": 8150000, "d": 5340000, "t": "سلامت و پزشکی"}, {"n": "الودکتر", "c": "دسته‌بندی رپورتاژ آگهی", "p": 14300000, "d": 8490000, "t": "سلامت و پزشکی"}, {"n": "عصر سلامت", "c": "دسته‌بندی مرتبط", "p": 7200000, "d": 3730000, "t": "سلامت و پزشکی"}, {"n": "آخرین خبر", "c": "دسته‌بندی مرتبط", "p": 10000000, "d": 9000000, "t": "خبرگزاری و رسانه خبری"}, {"n": "ایرنا", "c": "سایر", "p": 20000000, "d": 20000000, "t": "خبرگزاری و رسانه خبری"}, {"n": "نمناک", "c": "دسته‌بندی مرتبط", "p": 20300000, "d": 15070000, "t": "سبک زندگی"}, {"n": "خبر آنلاین", "c": "دسته‌بندی بازار", "p": 15406000, "d": 10710000, "t": "خبرگزاری و رسانه خبری"}, {"n": "فارس نیوز", "c": "دسته‌بندی بازار", "p": 15805000, "d": 11030000, "t": "خبرگزاری و رسانه خبری"}, {"n": "دنیای اقتصاد", "c": "سایر", "p": 17000000, "d": 17000000, "t": "اقتصادی"}, {"n": "تسنیم", "c": "دسته‌بندی بازار", "p": 14000000, "d": 10780000, "t": "خبرگزاری و رسانه خبری"}, {"n": "مهرنیوز", "c": "دسته‌بندی بازار", "p": 11000000, "d": 11000000, "t": "خبرگزاری و رسانه خبری"}, {"n": "جماران", "c": "دسته‌بندی بازار", "p": 7200000, "d": 6600000, "t": "خبرگزاری و رسانه خبری"}, {"n": "خبر فوری", "c": "سایر", "p": 25000000, "d": 21760000, "t": "خبرگزاری و رسانه خبری"}, {"n": "نی‌نی سایت", "c": "دسته‌بندی مرتبط", "p": 14831000, "d": 9880000, "t": "سلامت و پزشکی"}, {"n": "ایرنا", "c": "دسته‌بندی مرتبط", "p": 7000000, "d": 7000000, "t": "خبرگزاری و رسانه خبری"}, {"n": "تبیان", "c": "دسته‌بندی بازار", "p": 13000000, "d": 10400000, "t": "خبرگزاری و رسانه خبری"}, {"n": "ایلنا", "c": "سایر", "p": 5400000, "d": 5400000, "t": "خبرگزاری و رسانه خبری"}, {"n": "اقتصاد آنلاین", "c": "دسته‌بندی مرتبط", "p": 24280000, "d": 19260000, "t": "اقتصادی"}, {"n": "انتخاب", "c": "دسته‌بندی مرتبط", "p": 12484000, "d": 8650000, "t": "خبرگزاری و رسانه خبری"}, {"n": "رکنا", "c": "سایر", "p": 15245000, "d": 11360000, "t": "خبرگزاری و رسانه خبری"}, {"n": "خبرگزاری سلامت (طبنا)", "c": "دسته‌بندی مرتبط", "p": 4200000, "d": 3570000, "t": "سلامت و پزشکی"}, {"n": "مثبت سبز", "c": "دسته‌بندی مرتبط", "p": 12500000, "d": 12375000, "t": "سلامت و پزشکی"}, {"n": "ایسنا", "c": "دسته‌بندی بازار", "p": 30000000, "d": 25000000, "t": "خبرگزاری و رسانه خبری"}, {"n": "مشرق نیوز", "c": "دسته‌بندی بازار", "p": 25000000, "d": 25000000, "t": "خبرگزاری و رسانه خبری"}, {"n": "برنا نیوز", "c": "دسته‌بندی بازار", "p": 8500000, "d": 5950000, "t": "خبرگزاری و رسانه خبری"}, {"n": "خبرگزاری الف", "c": "دسته‌بندی بازار", "p": 19151000, "d": 15110000, "t": "خبرگزاری و رسانه خبری"}, {"n": "گسترش نیوز", "c": "دسته‌بندی مرتبط", "p": 7450000, "d": 4880000, "t": "اقتصادی"}, {"n": "روزنامه اعتماد", "c": "دسته‌بندی مرتبط", "p": 20000000, "d": 19800000, "t": "خبرگزاری و رسانه خبری"}, {"n": "اعتماد آنلاین", "c": "سایر", "p": 30000000, "d": 30000000, "t": "خبرگزاری و رسانه خبری"}, {"n": "تجارت‌نیوز", "c": "سایر", "p": 18000000, "d": 18000000, "t": "اقتصادی"}, {"n": "اقتصادنیوز", "c": "سایر", "p": 8500000, "d": 7650000, "t": "اقتصادی"}, {"n": "اکو ایران", "c": "سایر", "p": 7000000, "d": 6300000, "t": "اقتصادی"}, {"n": "دلگرم", "c": "سایر", "p": 8600000, "d": 8600000, "t": "سبک زندگی"}, {"n": "برترین‌ها", "c": "سایر", "p": 10656000, "d": 7580000, "t": "سبک زندگی"}, {"n": "روزیاتو", "c": "دسته‌بندی رپورتاژ آگهی", "p": 15000000, "d": 10260000, "t": "سبک زندگی"}, {"n": "رد مگ", "c": "دسته‌بندی مرتبط", "p": 6450000, "d": 4120000, "t": "سبک زندگی"}, {"n": "اقتصاد گستر", "c": "دسته‌بندی مرتبط", "p": 16800000, "d": 10920000, "t": "اقتصادی"}, {"n": "زومیت", "c": "دسته‌بندی رپورتاژ آگهی", "p": 44000000, "d": 44000000, "t": "سبک زندگی"}];
+const TYPES={
+ "سلامت و پزشکی":{c:"var(--c1)",bg:"#e2f6f3",fg:"#077a6e",ic:"+",h:"رسانه‌های تخصصی سلامت",d:"مخاطبی که فعالانه دنبال اطلاعات پزشکی و انتخاب پزشک است؛ نزدیک‌ترین مخاطب به تصمیم مراجعه."},
+ "خبرگزاری و رسانه خبری":{c:"var(--c2)",bg:"#e8effc",fg:"#2c56b0",ic:"خ",h:"خبرگزاری‌ها",d:"اعتبار برند و دیده‌شدن نام کلینیک در رسانه‌های پرمخاطب و شناخته‌شده."},
+ "اقتصادی":{c:"var(--c3)",bg:"#fdf0e2",fg:"#a8601a",ic:"٪",h:"رسانه‌های اقتصادی",d:"دسترسی به مخاطب با قدرت خرید بالاتر و پوشش خبری معتبر."},
+ "سبک زندگی":{c:"var(--c4)",bg:"#f2eafc",fg:"#7440b5",ic:"★",h:"سبک زندگی",d:"مخاطب عام و جوان‌تر؛ مناسب معرفی خدمات کلینیک در قالب محتوای خواندنی."}
+};
+const fa=n=>Math.round(n).toLocaleString('fa-IR');
+DATA.forEach((x,i)=>{x.id=i;x.r=x.p?((x.p-x.d)/x.p):0;x.on=true});
+let state={q:"",cat:"همه",type:null,sk:"d",sd:-1};
+
+document.getElementById('today').textContent=new Date().toLocaleDateString('fa-IR',{year:'numeric',month:'long',day:'numeric'});
+
+// KPIs (whole basket)
+const T=DATA.reduce((a,x)=>(a.p+=x.p,a.d+=x.d,a),{p:0,d:0});
+const uniq=new Set(DATA.map(x=>x.n)).size;
+k('k-n',fa(DATA.length));k('k-n2',fa(uniq)+' رسانه منحصربه‌فرد');
+k('k-p',fa(T.p));k('k-s',fa(T.p-T.d));k('k-f',fa(T.d));
+k('k-sp',fa((T.p-T.d)/T.p*100)+'٪');
+function k(id,v){document.getElementById(id).textContent=v}
+
+// Mix
+function mix(){
+  const by={};Object.keys(TYPES).forEach(t=>by[t]={n:0,d:0});
+  DATA.forEach(x=>{by[x.t].n++;by[x.t].d+=x.d});
+  const tot=Object.values(by).reduce((a,b)=>a+b.d,0);
+  document.getElementById('bar').innerHTML=Object.keys(TYPES).map(t=>`<div style="width:${by[t].d/tot*100}%;background:${TYPES[t].c}" title="${t}"></div>`).join('');
+  document.getElementById('legend').innerHTML=Object.keys(TYPES).map(t=>`<div class="lg ${state.type===t?'on':''}" data-t="${t}"><span class="dot" style="background:${TYPES[t].c}"></span><span class="nm">${t}</span><span class="ct">${fa(by[t].n)} رسانه · ${fa(by[t].d/tot*100)}٪</span><span class="am num">${fa(by[t].d)}</span></div>`).join('');
+  document.querySelectorAll('.lg').forEach(e=>e.onclick=()=>{state.type=state.type===e.dataset.t?null:e.dataset.t;mix();render()});
+}
+document.getElementById('why').innerHTML=Object.keys(TYPES).map(t=>{const y=TYPES[t];return `<div><span class="ic" style="background:${y.c}">${y.ic}</span><span><h4>${y.h}</h4><p>${y.d}</p></span></div>`}).join('');
+
+// Category chips
+const cats=["همه",...new Set(DATA.map(x=>x.c))];
+const ce=document.getElementById('cats');
+ce.innerHTML=cats.map(c=>`<button class="chip ${c==='همه'?'on':''}" data-c="${c}">${c}</button>`).join('');
+ce.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{state.cat=b.dataset.c;ce.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===b));render()});
+
+document.getElementById('q').oninput=e=>{state.q=e.target.value.trim();render()};
+document.querySelectorAll('th[data-k]').forEach(th=>th.onclick=()=>{const kk=th.dataset.k;state.sd=state.sk===kk?-state.sd:(['n','t','c'].includes(kk)?1:-1);state.sk=kk;render()});
+document.getElementById('msort').onchange=e=>{const[a,b]=e.target.value.split(':');state.sk=a;state.sd=+b;render()};
+document.getElementById('all').onclick=()=>{visible().forEach(x=>x.on=true);render()};
+document.getElementById('none').onclick=()=>{visible().forEach(x=>x.on=false);render()};
+
+function visible(){
+  return DATA.filter(x=>(state.cat==='همه'||x.c===state.cat)&&(!state.type||x.t===state.type)&&(!state.q||x.n.includes(state.q)));
+}
+function render(){
+  const v=visible().sort((a,b)=>{const A=a[state.sk],B=b[state.sk];return (typeof A==='string'?A.localeCompare(B,'fa'):A-B)*state.sd});
+  document.querySelectorAll('th[data-k]').forEach(th=>{th.classList.toggle('s',th.dataset.k===state.sk);th.querySelector('.ar').textContent=(th.dataset.k===state.sk&&state.sd===1)?'▲':'▼'});
+  const tb=document.getElementById('tb');
+  if(!v.length){tb.innerHTML='<tr><td colspan="7" class="empty">رسانه‌ای با این فیلتر پیدا نشد</td></tr>'}
+  else tb.innerHTML=v.map(x=>{const y=TYPES[x.t];return `<tr class="${x.on?'':'off'}">
+    <td class="c-cb"><input type="checkbox" class="cb" data-id="${x.id}" ${x.on?'checked':''}></td>
+    <td class="c-name"><div class="media"><span class="av" style="background:${y.c}">${x.n.replace('خبرگزاری ','').charAt(0)}</span><span><b>${x.n}</b></span></div></td>
+    <td class="c-type"><span class="typ" style="background:${y.bg};color:${y.fg}">${x.t}</span></td>
+    <td class="cat c-cat">${x.c}</td>
+    <td class="num c-old">${x.p!==x.d?`<span class="old">${fa(x.p)}</span>`:`<span class="same">${fa(x.p)}</span>`}</td>
+    <td class="c-disc">${x.r>0?`<span class="disc num">${fa(x.r*100)}٪</span>`:'<span class="disc z">—</span>'}</td>
+    <td class="final num c-final">${fa(x.d)}</td></tr>`}).join('');
+  tb.querySelectorAll('.cb').forEach(c=>c.onchange=()=>{DATA[c.dataset.id].on=c.checked;render()});
+  const s=DATA.filter(x=>x.on).reduce((a,x)=>(a.n++,a.p+=x.p,a.d+=x.d,a),{n:0,p:0,d:0});
+  k('s-n',fa(s.n)+' از '+fa(DATA.length));k('s-p',fa(s.p));k('s-s',fa(s.p-s.d));k('s-f',fa(s.d));
+}
+mix();render();
+</script>
+</body>
+</html>
